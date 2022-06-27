@@ -1,6 +1,6 @@
 ﻿namespace TrackerUI
 {
-    partial class Form1
+    partial class TournamentViewerForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,10 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TournamentViewerForm));
+            this.SuspendLayout();
+            // 
+            // TournamentViewerForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(864, 585);
+            this.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.Name = "TournamentViewerForm";
+            this.Text = "Tournament Viewer";
+            this.Load += new System.EventHandler(this.TournamentViewerForm_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
