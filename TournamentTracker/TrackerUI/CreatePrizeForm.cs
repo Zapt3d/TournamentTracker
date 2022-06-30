@@ -32,6 +32,7 @@ namespace TrackerUI
                 {
                     db.CreatePrize(model);
                 }
+                ResetForm();
             }
             else
             {
@@ -82,6 +83,13 @@ namespace TrackerUI
             }
 
             return validForm;
+        }
+        private void ResetForm()
+        {
+            placeNameValue.Text = "";
+            placeNumberValue.Text = "";
+            prizeAmountValue.Text = "0";
+            prizePercentageValue.Text = "0";
         }
     }
 }
