@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TrackerLibrary;
 
 namespace TrackerUI
 {
@@ -21,7 +22,20 @@ namespace TrackerUI
         {
             if (ValidateForm())
             {
+                PrizeModel model = new(
+                    placeNameValue.Text, 
+                    placeNumberValue.Text, 
+                    prizeAmountValue.Text, 
+                    prizePercentageValue.Text);
 
+                foreach(IDataConnection db in GlobalConfig.Connections)
+                {
+                    db.CreatePrize(model);
+                }
+            }
+            else
+            {
+                MessageBox.Show("This form has invalid information. Please check it and try again");
             }
         }
         /// <summary>
@@ -37,7 +51,7 @@ namespace TrackerUI
             {
                 validForm = false;
             }
-            // Placenumber needs to be > 1
+            // Placenumber needs to be >= 1
             if (placeNumber < 1)
             {
                 validForm = false;
@@ -49,7 +63,7 @@ namespace TrackerUI
             }
             
             bool prizeAmountValid = decimal.TryParse(prizeAmountValue.Text, out decimal prizeAmount);
-            bool prizePercentageValid = !int.TryParse(pricePercentageValue.Text, out int prizePercentage);
+            bool prizePercentageValid = double.TryParse(prizePercentageValue.Text, out double prizePercentage);
 
             // Either prize amount or prize percentage needs to be valid
             if (!prizeAmountValid || !prizePercentageValid)
