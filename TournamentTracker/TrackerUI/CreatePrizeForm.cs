@@ -39,6 +39,7 @@ namespace TrackerUI
                 MessageBox.Show("This form has invalid information. Please check it and try again");
             }
         }
+
         /// <summary>
         /// Validates all field inputs by user
         /// </summary>
@@ -84,6 +85,7 @@ namespace TrackerUI
 
             return validForm;
         }
+
         private void ResetForm()
         {
             placeNameValue.Text = "";
