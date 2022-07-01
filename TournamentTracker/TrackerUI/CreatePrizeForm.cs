@@ -53,11 +53,13 @@ namespace TrackerUI
             {
                 validForm = false;
             }
+
             // Placenumber needs to be >= 1
             if (placeNumber < 1)
             {
                 validForm = false;
             }
+
             // Placename cant be empty
             if (placeNameValue.Text.Length == 0)
             {
@@ -72,11 +74,13 @@ namespace TrackerUI
             {
                 validForm = false;
             }
+
             // prize amount and prize percentage need to be equal or greater than 0
             if (prizeAmount <= 0 && prizePercentage <= 0)
             {
                 validForm = false;
             }
+
             // prize percentage cant be above 100 or below 0
             if (prizePercentage > 100 || prizePercentage < 0)
             {
