@@ -10,19 +10,19 @@ namespace TrackerLibrary
 {
     public static class GlobalConfig
     {
-        public static IDataConnection Connections { get; private set; }
+        public static IDataConnection Connection { get; private set; }
 
-        public static void InitializeConnections(DatabaseType db)
+        public static void InitializeConnection(DatabaseType db)
         {
             switch (db)
             {
                 case DatabaseType.SQL:
                     SqlConnector sql = new();
-                    Connections = sql;
+                    Connection = sql;
                     break;
                 case DatabaseType.TextFile:
                     TextConnector textFile = new();
-                    Connections = textFile;
+                    Connection = textFile;
                     break;
                 default:
                     break;
